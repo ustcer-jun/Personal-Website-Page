@@ -1,0 +1,74 @@
+---
+import Gallery from './Gallery.astro';
+
+interface Props {
+  title: string;
+  galleries: {
+    title: string;
+    folder: string;
+    thumbnail: string;
+    items: {
+      type: 'image' | 'video';
+      src: string;
+      alt?: string;
+    }[];
+  }[];
+}
+
+const { title, galleries } = Astro.props;
+---
+
+<div class="mb-8">
+  <h3 class="text-lg font-semibold mb-4 text-primary dark:text-accent">{title}</h3>
+  
+  <!-- Carousel Container -->
+  <div class="relative">
+    <!-- Carousel Slides -->
+    <div class="overflow-x-auto">
+      <div id={title.replace(/\s+/g, '-').toLowerCase() + '-carousel'} class="flex gap-4 px-2">
+        {galleries.map((gallery, index) => (
+          <div key={index} class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
+            <Gallery 
+              title={gallery.title} 
+              folder={gallery.folder} 
+              thumbnail={gallery.thumbnail} 
+              items={gallery.items} 
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    {galleries.length > 3 && (
+      <>
+        <button 
+          class="absolute left-0 top-1/2 -translate-y-1/2 bg-white dark:bg-neutral-800 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors z-10"
+          onclick={`scrollCarousel('${title.replace(/\s+/g, '-').toLowerCase() + '-carousel'}', -1)`}
+        >
+          ←
+        </button>
+        <button 
+          class="absolute right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-neutral-800 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors z-10"
+          onclick={`scrollCarousel('${title.replace(/\s+/g, '-').toLowerCase() + '-carousel'}', 1)`}
+        >
+          →
+        </button>
+      </>
+    )}
+  </div>
+</div>
+
+<script is:inline>
+  // Carousel scroll functionality
+  function scrollCarousel(carouselId, direction) {
+    const container = document.getElementById(carouselId)?.parentElement;
+    if (!container) return;
+    
+    const scrollAmount = container.clientWidth * 0.75;
+    container.scrollBy({
+      left: scrollAmount * direction,
+      behavior: 'smooth'
+    });
+  }
+</script>
