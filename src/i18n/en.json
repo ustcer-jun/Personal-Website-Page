@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "introduction": "Introduction",
+    "education": "Education",
+    "publications": "Publications",
+    "skills": "Skills",
+    "links": "Links"
+  },
+  "hero": {
+    "name": "Yajun Zhang",
+    "title": "Master in Geophysics",
+    "bio": "I'm a researcher focused on geophysics."
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I graduated from East China University of Technology with a bachelor's degree in Exploration Technology and Engineering. I am currently a combined masters and doctoral student in Geophysics at the University of Science and Technology of China. My main research direction is crustal deformation monitoring using the open-source satellite SAR data processing software GMTSA, combined with seismic and geological activity characteristics, to quantitatively invert fault physical properties and tectonic dynamic processes.",
+    "highlights": {
+      "research": "Research Interests",
+      "research1": "Earthquake Geodesy",
+      "research2": "Satellite Geodesy",
+      "research3": "Geophysical Inversion",
+      "focus": "Current Focus",
+      "focus1": "Research area 1",
+      "focus2": "Research area 2",
+      "focus3": "Research area 3",
+      "fun": "Fun Facts",
+      "fun1": "Vibe coding",
+      "fun2": "Sports",
+      "fun3": "Traveling"
+    }
+  },
+  "education": {
+    "title": "Education"
+  },
+  "skills": {
+    "title": "Skills & Expertise"
+  },
+  "publications": {
+    "title": "Publications",
+    "doi": "DOI",
+    "pdf": "PDF"
+  },
+  "blog": {
+    "title": "Related Links"
+  },
+  "shares": {
+    "title": "Personal Shares",
+    "travel": "Travel Footprints",
+    "daily": "Daily Life",
+    "conferences": "Conferences & Research",
+    "campus": "Campus Share",
+    "game": "Game Share",
+    "concert": "Concert Share",
+    "research": "Research",
+    "chendu": "Chengdu",
+    "hefei": "Hefei",
+    "henan": "Henan",
+    "jiuzhaigou": "Jiuzhaigou",
+    "lanzhou": "Lanzhou",
+    "qingdao": "Qingdao",
+    "wuhan": "Wuhan",
+    "xiamen": "Xiamen"
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "Email",
+    "phone": "Phone/WeChat",
+    "address": "Address"
+  },
+  "footer": {
+    "copyright": "© 2026 Yajun Zhang. All rights reserved.",
+    "back_to_top": "Back to Top"
+  }
+}

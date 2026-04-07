@@ -1,0 +1,114 @@
+---
+import { t } from '../i18n/helper';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const { title, locale } = Astro.props;
+---
+
+<html lang={locale === 'zh' ? 'zh-CN' : 'en-US'} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Personal Homepage</title>
+    <meta name="description" content="Personal homepage of John Doe, Ph.D. Candidate in Computer Science" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-100 transition-colors duration-300">
+    <Header locale={locale} />
+    <main>
+      <slot />
+    </main>
+    <Footer locale={locale} />
+    <script>
+      // Dark mode toggle
+      document.addEventListener('DOMContentLoaded', () => {
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true' || 
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          html.classList.add('dark');
+        }
+        
+        if (darkModeToggle) {
+          darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('darkMode', html.classList.contains('dark'));
+            const darkModeIcon = document.getElementById('dark-mode-icon');
+            if (darkModeIcon) {
+              darkModeIcon.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
+            }
+          });
+        }
+        
+        // Language toggle
+        const langToggle = document.getElementById('lang-toggle');
+        if (langToggle) {
+          langToggle.addEventListener('click', () => {
+            const currentPath = window.location.pathname;
+            const isZh = currentPath.startsWith('/zh');
+            const newLang = isZh ? 'en' : 'zh';
+            
+            localStorage.setItem('lang', newLang);
+            
+            if (isZh) {
+              // Switch from zh to en
+              if (currentPath === '/zh/') {
+                window.location.href = '/';
+              } else {
+                window.location.href = currentPath.replace('/zh', '');
+              }
+            } else {
+              // Switch from en to zh
+              if (currentPath === '/' || currentPath === '/index.html') {
+                window.location.href = '/zh/';
+              } else {
+                window.location.href = '/zh' + currentPath;
+              }
+            }
+          });
+        }
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        if (backToTopButton) {
+          window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+              backToTopButton.classList.remove('hidden');
+            } else {
+              backToTopButton.classList.add('hidden');
+            }
+          });
+          
+          backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        }
+        
+        // Scroll reveal animation
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-fade-in', 'animate-slide-up');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+        
+        document.querySelectorAll('.reveal').forEach(el => {
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>

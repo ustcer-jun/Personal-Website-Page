@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "introduction": "个人简介",
+    "education": "教育背景",
+    "publications": "发表论文",
+    "skills": "技能",
+    "links": "相关链接"
+  },
+  "hero": {
+    "name": "张亚俊",
+    "title": "地球物理学硕士",
+    "bio": "我是一名专注于地球物理学研究的科研人员。"
+  },
+  "about": {
+    "title": "关于我",
+    "intro": "本科毕业于东华理工大学勘查技术与工程专业，现于中国科学技术大学地球物理学专业硕博连读。主要研究方向为利用开源卫星SAR数据处理软件GMTSA进行地壳形变监测，结合地震地质活动特征，定量反演断层物理性质与构造动力学过程。",
+    "highlights": {
+      "research": "研究兴趣",
+      "research1": "地震大地测量学",
+      "research2": "卫星大地测量学",
+      "research3": "地球物理反演",
+      "focus": "当前研究重点",
+      "focus1": "研究领域1",
+      "focus2": "研究领域2",
+      "focus3": "研究领域3",
+      "fun": "兴趣爱好",
+      "fun1": "编程",
+      "fun2": "运动",
+      "fun3": "旅行"
+    }
+  },
+  "education": {
+    "title": "教育背景"
+  },
+  "skills": {
+    "title": "技能与专长"
+  },
+  "publications": {
+    "title": "发表论文",
+    "doi": "DOI",
+    "pdf": "PDF"
+  },
+  "blog": {
+    "title": "相关链接"
+  },
+  "shares": {
+    "title": "个人分享",
+    "travel": "旅游足迹",
+    "daily": "生活日常",
+    "conferences": "科研参会",
+    "campus": "校园分享",
+    "game": "游戏分享",
+    "concert": "音乐会分享",
+    "research": "科研",
+    "chendu": "成都",
+    "hefei": "合肥",
+    "henan": "河南",
+    "jiuzhaigou": "九寨沟",
+    "lanzhou": "兰州",
+    "qingdao": "青岛",
+    "wuhan": "武汉",
+    "xiamen": "厦门"
+  },
+  "contact": {
+    "title": "联系方式",
+    "email": "邮箱",
+    "phone": "电话/微信",
+    "address": "地址"
+  },
+  "footer": {
+    "copyright": "© 2026 张亚军. 保留所有权利.",
+    "back_to_top": "回到顶部"
+  }
+}

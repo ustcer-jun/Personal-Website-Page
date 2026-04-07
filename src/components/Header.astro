@@ -1,0 +1,44 @@
+---
+import { t } from '../i18n/helper';
+
+const { locale = 'en' } = Astro.props;
+
+// Determine home link based on current locale
+const homeLink = locale === 'zh' ? '/zh/' : '/';
+---
+
+<header class="sticky top-0 z-10 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <!-- Language Switch -->
+      <div class="flex items-center space-x-6">
+        <a href="/" class="text-sm font-medium text-primary dark:text-accent hover:underline">
+          English
+        </a>
+        <a href="/zh/" class="text-sm font-medium text-primary dark:text-accent hover:underline">
+          中文
+        </a>
+      </div>
+      
+      <!-- Navigation Links -->
+      <nav class="flex items-center space-x-6">
+        <a href="#introduction" class="text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-primary dark:hover:text-accent">
+          {locale === 'en' ? 'Introduction' : '个人简介'}
+        </a>
+        <a href="#education" class="text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-primary dark:hover:text-accent">
+          {locale === 'en' ? 'Education' : '教育背景'}
+        </a>
+        <a href="#publications" class="text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-primary dark:hover:text-accent">
+          {locale === 'en' ? 'Publications' : '发表论文'}
+        </a>
+        <a href="#links" class="text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-primary dark:hover:text-accent">
+          {locale === 'en' ? 'Links' : '相关链接'}
+        </a>
+        <a href="#personal-share" class="text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-primary dark:hover:text-accent">
+          {locale === 'en' ? 'Personal Share' : '个人分享'}
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
