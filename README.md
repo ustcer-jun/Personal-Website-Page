@@ -1,4 +1,4 @@
-# 张亚军的个人学术主页 | Yajun Zhang's Personal Academic Homepage
+# 个人学术主页 | Personal Academic Homepage
 
 一个使用 Astro 和 Tailwind CSS 构建的现代、优雅的个人学术主页。
 
@@ -313,10 +313,3 @@ This project is configured with GitHub Actions for automatic deployment, simply:
 
 MIT License
 
-## 联系方式 | Contact Information
-
-- 邮箱: ustcer-jun@mail.ustc.edu.cn | Email: ustcer-jun@mail.ustc.edu.cn
-- GitHub: [https://github.com/ustcer-jun](https://github.com/ustcer-jun)
-- 哔哩哔哩: [https://space.bilibili.com/492486522](https://space.bilibili.com/492486522) | Bilibili: [https://space.bilibili.com/492486522](https://space.bilibili.com/492486522)
-- 网易云音乐: [https://music.163.com/#/playlist?id=3003575598](https://music.163.com/#/playlist?id=3003575598) | NetEase Cloud Music: [https://music.163.com/#/playlist?id=3003575598](https://music.163.com/#/playlist?id=3003575598)
-- CSDN: [https://blog.csdn.net/JJOHJHOUJ](https://blog.csdn.net/JJOHJHOUJ) | CSDN: [https://blog.csdn.net/JJOHJHOUJ](https://blog.csdn.net/JJOHJHOUJ)
